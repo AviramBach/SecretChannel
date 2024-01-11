@@ -1,0 +1,28 @@
+/*SASS - SET-UP*/
+
+// @import 'setup/variables';
+// @import 'setup/mixins';
+// @import 'setup/functions';
+// @import 'setup/_variables';
+// @import 'setup/mixins';
+// @import 'setup/functions';
+// @import'setup/typography';
+
+// BASICS
+@import './_Layout.scss';
+// @import 'base/base';
+@import './base.scss';
+@import './_UserMsg.scss';
+@import './_LoginSignUp.scss';
+
+/*SASS - cmp*/
+// @import 'cmp/AppHeader';
+// @import 'cmp/AboutPage';
+// @import 'cmp/HomePage';
+// @import 'cmp/ToyDetails';
+// @import 'cmp/ToyFIlter';
+// @import 'cmp/ToyIndex';
+// @import 'cmp/ToyList';
+// @import 'cmp/ToyPreview';
+// @import 'cmp/Dashboard';
+

@@ -1,0 +1,180 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    width: 70vh;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+//     margin: auto;
+//   position: absolute;
+//   top: 0; bottom: 0; /* Fill the vertical space */
+//   left: 0; right: 0;
+
+    .login-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        // max-width: em(300px);
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        
+
+        .login-input {
+            width: 100%;
+            // padding: 10px;
+            margin-bottom: 1rem;
+
+           
+        }
+
+        .login-button {
+            width: 40%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+
+    .toggle-signup-link {
+        text-decoration: none;
+        color: #007bff;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.guest-login-btn {
+    margin-top: 0.5rem;
+    color: #222b35;
+    background-color: transparent;
+    border: 2px solid #222b35;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    outline: none;
+    border-radius: 4px;
+}
+
+.guest-login-btn:hover {
+    // background-color: #222b35;
+    background-color: rgba(0, 123, 255, 0.794);
+    color: #ffffff;
+}
+
+.guest-login-btn:focus {
+    outline: none;
+    /* Additional focus styles if needed */
+}
+
+/* Optional: Active state style */
+.guest-login-btn:active {
+    transform: translateY(1px);
+}
+
+.landing-page-title {
+
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    white-space: nowrap;
+    /* Ensures the text doesn't wrap */
+    overflow: hidden;
+    /* Hide overflowing characters */
+    // border-right: 2px solid; /* Simulates the typing cursor */
+    animation: typing 5s steps(45) infinite;
+    text-align: center;
+
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+
+    p{
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 765px) {
+
+    .login-page {
+        
+        padding: 20px;
+       
+        width: 70%;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+    //     margin: auto;
+    //   position: absolute;
+    //   top: 0; bottom: 0; /* Fill the vertical space */
+    //   left: 0; right: 0;
+    
+        .login-form {
+            
+            width: 100%;
+            // max-width: em(300px);
+            padding: 20px;
+           
+    
+            .login-input {
+                width: 100%;
+                // padding: 10px;
+                margin-bottom: 1rem;  
+            }
+    
+            .login-button {
+                width: 40%;
+                padding: 10px;
+            }
+        }
+    
+    }
+    
+    .guest-login-btn {
+        margin-top: 0.5rem;
+        padding: 8px 16px;
+        font-size: 14px;
+       
+    }
+}
