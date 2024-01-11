@@ -6,6 +6,7 @@ import { ChatBox } from '../cmps/ChatBox'
 import { utilService } from "../services/util.service.js"
 import { useSelector } from "react-redux"
 import { msgService } from "../services/message.service.js"
+import { VideoChatBox } from '../cmps/VideoChatBox.jsx';
 
 
 
@@ -88,13 +89,20 @@ export function ChannelChat() {
   
   
   return (
+    // <div className="chat-container">
+    //   <h2>{channel.name}</h2>
+
+    //   <ChatBox channelId={channel._id} history={channel.chatHistory} /> 
+      
+    // </div>
+
     <div className="chat-container">
       <h2>{channel.name}</h2>
-
-
-  
-
-     <ChatBox channelId={channel._id} history={channel.chatHistory} /> 
+      {channel.name !== "Video Chat" ? (
+        <ChatBox channelId={channel._id} history={channel.chatHistory} />
+      ) : (
+        <VideoChatBox />
+      )}
     </div>
   )
 

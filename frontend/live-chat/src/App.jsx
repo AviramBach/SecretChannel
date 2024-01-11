@@ -6,6 +6,10 @@ import { AppHeader } from './cmps/AppHeader'
 import { HomePage } from './pages/HomePage'
 import { HelpPage } from './pages/HelpPage'
 import { ChannelChat } from './pages/ChannelChat'
+import { LoginSignup } from './cmps/LoginSignup'
+
+
+import './assets/style/main.scss'
 
 // import { ToyIndex } from './pages/ToyIndex'
 // import { UserMsg } from './cmps/UserMsg'
@@ -14,8 +18,6 @@ import { ChannelChat } from './pages/ChannelChat'
 // import { LoginSignup } from './cmps/LoginSignup'
 // import { ReviewExplore } from './pages/ReviewExplore'
 
-import './assets/style/main.scss'
-import { LoginSignup } from './cmps/LoginSignup'
 // import './assets/style/App.css'
 // import './assets/style/index.css'
 

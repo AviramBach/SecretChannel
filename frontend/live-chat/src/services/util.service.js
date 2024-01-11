@@ -1,5 +1,6 @@
 export const utilService = {
     getCurrentTime,
+    getGreeting,
     makeId,
     makeLorem,
     getRandomIntInclusive,
@@ -11,9 +12,9 @@ export const utilService = {
     makeLabel,
     getTimeFromStamp,
     randomTrueFalse,
-     makeImage,
-     getEmptyMsg,
-     getEmptyReview
+    makeImage,
+    getEmptyMsg,
+    getEmptyReview
 }
 
 function makeId(length = 6) {
@@ -210,20 +211,39 @@ function randomTrueFalse() {
 }
 function getEmptyMsg() {
     return {
-      txt: '',
+        txt: '',
     }
-  }
+}
 function getEmptyReview() {
     return {
-      txt: '',
+        txt: '',
     }
-  }
+}
 
 
-  function getCurrentTime() {
+function getCurrentTime() {
     const now = new Date();
     const hour = now.getHours().toString().padStart(2, '0'); // Ensure two digits for hour
     const minutes = now.getMinutes().toString().padStart(2, '0'); // Ensure two digits for minutes
-  
+
     return `${hour}:${minutes}`;
-  } 
+}
+
+function getGreeting() {
+    const currentTime = new Date()
+    const currentHour = currentTime.getHours()
+
+    let greeting;
+
+    if (currentHour >= 5 && currentHour < 12) {
+        greeting = "Good morning"
+    } else if (currentHour >= 12 && currentHour < 17) {
+        greeting = "Good afternoon"
+    } else if (currentHour >= 17 && currentHour < 21) {
+        greeting = "Good evening"
+    } else {
+        greeting = "Good night"
+    }
+
+    return greeting 
+}

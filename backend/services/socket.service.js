@@ -70,6 +70,24 @@ export function setupSocketAPI(http) {
             logger.info(`Removing socket.userId for socket [id: ${socket.id}]`)
             delete socket.userId
         })
+
+        // Listen for signaling messages from clients
+        socket.on('offer', (data) => {
+            // Broadcast the offer to the appropriate peer (if needed)
+            // For instance, find the appropriate socket and emit the offer
+            // io.to(socketId).emit('signalingMessage', { offer: data.offer });
+        });
+
+        socket.on('answer', (data) => {
+            // Broadcast the answer to the appropriate peer (if needed)
+            // io.to(socketId).emit('signalingMessage', { answer: data.answer });
+        });
+
+        socket.on('iceCandidate', (data) => {
+            // Broadcast the ICE candidate to the appropriate peer (if needed)
+            // io.to(socketId).emit('signalingMessage', { candidate: data.candidate });
+        });
+
     })
 }
 

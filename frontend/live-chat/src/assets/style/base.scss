@@ -1,5 +1,6 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  // font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -61,6 +62,12 @@ h1 {
   line-height: 1.1;
 }
 
+button{
+  font-family: 'Raleway', sans-serif;
+}
+
+
+
 // button {
 //   border-radius: 8px;
 //   border: 1px solid transparent;
@@ -97,56 +104,9 @@ h1 {
 //   }
 // }
 
-.app-header {
-  display: flex;
-  // flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  // color: blue;
-  // font-family: 'Righteous', cursive;
-  padding: em(16px);
-  border-radius: em(8px);
-
-  h1 {
-    margin: 0.2rem;
-  }
-
-  
-  nav {
-    // border: 1px solid;
-    // border-radius: 20px;
-    margin: 0.2rem;
-    
-    a {
-      display: inline-block;
-      padding: 0.5em 1em;
-      text-decoration: none;
-      // color: yellow;
-    }
-  }
-}
 
 
-.home-section {
-  display: flex;
-  justify-content: flex-start;
 
-  h2 {
-    margin: 0px;
-    padding-left: 1rem;
-  }
-}
 
-.channel-list {
-  list-style: none;
-  padding: 0px;
 
-  h4 {
-    padding-left: 1rem;
-  }
-}
 
-.channel-preview {
-  border-top: 0.2rem black solid;
-}

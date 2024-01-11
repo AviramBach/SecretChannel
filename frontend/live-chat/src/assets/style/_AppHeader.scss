@@ -1,0 +1,221 @@
+.app-header {
+    display: flex;
+    // flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    // color: blue;
+    // font-family: 'Righteous', cursive;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    h1 {
+        margin: 0.2rem;
+    }
+
+
+    nav {
+        // border: 1px solid;
+        // border-radius: 20px;
+        margin: 0.2rem;
+
+        a {
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            // color: yellow;
+        }
+    }
+}
+
+
+.hamburger-icon {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+
+}
+
+.menu {
+    width: 7rem;
+    /* Adjust for smaller screens */
+    top: 3rem;
+    /* Adjust the top position */
+    right: 0.2rem;
+    // display: none;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    background-color: white;
+
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.menu.show {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    opacity: 1;
+    pointer-events: auto;
+
+    .custom-navlink{
+        font-weight: bold;
+    }
+}
+
+button.close-menu {
+
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #080924;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: inherit;
+    text-decoration: inherit;
+    // padding: 0.5rem 1rem;
+    text-decoration: none;
+    border: none;
+    line-height: 1.5;
+    align-self: flex-end;
+}
+
+button.close-menu:hover {
+    color: #535bf2;
+    cursor: pointer;
+}
+
+.user-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+    text-align: center;
+
+    .user-info {
+        // display: flex;
+        // flex-direction: row;
+    }
+
+    .logout-btn {
+        margin-top: 0.1rem;
+        color: black;
+        background-color: transparent;
+        border: 2px solid #222b35;
+        padding: 0.25rem 0.5rem;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        outline: none;
+        border-radius: 4px;
+        
+    }
+
+    .logout-btn:hover {
+        color: white;
+        background-color: #222b35;
+
+    }
+}
+
+@media (max-width: 765px) {
+
+    .app-header {
+        h1 {
+            font-size: 2.5em;
+            line-height: 1.5;
+        }
+
+        .user-info-container {
+            font-size: 0.85em;
+        }
+
+        .logout-btn {
+            border: 1px solid #222b35;
+            padding: 0.25em 0.5em;
+            font-size: 0.85em;
+        }
+    }
+
+    .menu {
+        width: 7rem;
+        /* Adjust for smaller screens */
+        top: 0.5rem;
+        /* Adjust the top position */
+        right: 0.2rem;
+    }
+
+    .main-layout {
+        display: block;
+
+        .chat-container {
+            h2 {
+                text-align: center;
+                // margin: 0 auto;
+            }
+
+
+            form {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 4px 2px 2px 2px;
+                height: 3rem;
+
+
+                // width: 90vw;
+                // left: 30px;
+                // padding-left: 8px; 
+            }
+
+            input {
+                border: 1px solid black;
+                border-radius: 20px;
+                width: 100%;
+                height: 100%;
+
+
+                // border: 0px;
+                // margin-left: 3rem;
+                // margin-right: 1em;
+
+                // font-size: 16px;
+                // float: left;
+
+                // outline: none;
+                // background-color: #eceff1;
+            }
+
+            .send-btn {
+
+                height: 100%;
+                border-radius: 50%;
+                border: 0px;
+                color: #fff;
+                margin: 0px 2px 0px 2px;
+
+                background-color: rgb(104, 161, 236);
+                text-decoration: none;
+                transition: all 0.8s;
+
+            }
+
+            .send-btn:hover {
+                background-color: rgb(32, 117, 229);
+            }
+        }
+    }
+}

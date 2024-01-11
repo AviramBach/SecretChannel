@@ -5,31 +5,31 @@ import { login, signup } from '../store/actions/user.actions.js'
 import { useNavigate } from 'react-router-dom'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
-
+import { UserMsg } from './UserMsg.jsx'
 
 export function LoginSignup({ onToggleLandingPage }) {
 
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
     const [isSignupState, setIsSignupState] = useState(false)
     const navigate = useNavigate()
-    
-    
-    
+
+
+
     function handleCredentialsChange(ev) {
         const field = ev.target.name
         const value = ev.target.value
         setCredentials(credentials => ({ ...credentials, [field]: value }))
     }
-    
+
     async function onSubmit(ev) {
         ev.preventDefault()
-        
+
         if (isSignupState) {
             try {
                 const user = await signup(credentials)
                 showSuccessMsg(`Welcome ${user.fullname}`)
                 onToggleLandingPage()
-                
+
             }
             catch (err) {
                 showErrorMsg('Cannot signup')
@@ -53,11 +53,12 @@ export function LoginSignup({ onToggleLandingPage }) {
     }
 
     const { username, password, fullname } = credentials
-    
+
     return (
         <div className="login-page">
             <h1 className="landing-page-title">Secret Channel</h1>
             <form className="login-form" onSubmit={onSubmit}>
+                <h3 className="landing-page-welcome">Welcome!</h3>
                 <TextField
                     className="login-input"
                     type="text"
@@ -96,11 +97,13 @@ export function LoginSignup({ onToggleLandingPage }) {
                         required
                     />
                 )}
-                
-                <Button className="login-button"  type="submit" onSubmit={onSubmit} variant="outlined" >
+
+                <Button className="login-button" type="submit" onSubmit={onSubmit} variant="outlined" >
                     {isSignupState ? 'Signup' : 'Login'}
                 </Button>
                 {/* <button>Login!</button> */}
+
+                <UserMsg />
             </form>
 
             <div className="btns">

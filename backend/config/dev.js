@@ -1,6 +1,6 @@
 export default {
-    dbURL: 'mongodb://127.0.0.1:27017',
-    // dbURL: 'mongodb+srv://yinonabarjel:Wishime1@cluster0.pn2bkb6.mongodb.net/?retryWrites=true&w=majority',
+    // dbURL: 'mongodb://127.0.0.1:27017',
+    dbURL: 'mongodb+srv://bach2142:codingisacademy2023@cluster0.kfjcfff.mongodb.net/',
     dbName: 'secret-channel',
     // dbName: 'userDB',
 }

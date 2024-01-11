@@ -1,7 +1,7 @@
 .main-layout {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: 140px 1fr;
+    grid-template-columns: 15vw 1fr;
+    grid-template-rows: 10vh 1fr;
 
 
     box-shadow: inset 0 0 0 2px black;
@@ -10,33 +10,27 @@
 }
 
 .home-section {
-    grid-column: 1/2;
+    grid-column: 1/3;
     grid-row: 2/3;
+
+    // max-width: 100%;
     // box-shadow: inset 0 0 0 1px black;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
 }
 
+
 .app-header {
-    grid-column: 2/3;
+    grid-column: 1/3;
     // box-shadow: 0 0 0 1px black;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .chat-container {
-
     // box-shadow: inset 0 0 0 1px black;
     grid-column: 1/3;
     grid-row: 2/3;
-
     // height: 100%;
-
-
 }
-
-
-
 
 
 .user-box {
@@ -44,151 +38,6 @@
     // background-color: red;
     padding: 0.2rem;
 }
-
-.msgs-container::-webkit-scrollbar {
-    width: 16px;
-}
-
-.msgs-container::-webkit-scrollbar-track {
-    background-color: #e4e4e4;
-    border-radius: 100px;
-}
-
-.msgs-container::-webkit-scrollbar-thumb {
-    background-color: rgb(104, 161, 236);
-    border-radius: 100px;
-}
-
-
-.msgs-container {
-    overflow-y: auto;
-    height: 70vh;
-    padding: 0;
-    list-style-type: none;
-    margin: 0;
-    border-radius: 20px;
-    background-color: rgba(211, 211, 211, 0.272);
-
-
-
-
-    p {
-        display: inline-block;
-        max-width: 90%;
-        margin: 8px;
-        padding: 10px;
-        border-radius: 15px;
-        background-color: rgb(198, 220, 248);
-        word-wrap: break-word;
-
-        .msg-time {
-            font-size: 0.7rem;
-            float: right;
-            margin-left: 10px;
-            margin-top: 10px;
-        }
-
-        .msg-from {
-            font-weight: bold;
-
-
-        }
-    }
-
-    // .msg-container {
-    //     /* Styles for messages from others */
-    //     /* For example: align on the left side */
-    //     text-align: left;
-    // }
-
-    // .msg-container-me {
-    //     /* Styles for messages from you */
-    //     /* For example: align on the right side */
-    //     text-align: right;
-    //     /* Add more styles for differentiation */
-    // }
-}
-
-.channel-chat-container {
-    padding: 0px 8px 0px 8px; 
-}
-
-.chat-container {
-
-    h2{
-        text-align: center;
-    }
-
-    form {
-        // position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 8px;
-        padding: 4px 4px 4px 4px;
-        height: 3rem;
-        box-shadow: 2px 2px 4px  rgba(0, 0, 0, 0.149);
-        border-radius: 30px;
-        // width: 90vw;
-        // left: 30px;
-        // padding-left: 8px; 
-    }
-
-    input {
-        
-        // box-shadow: inset 0 0 0 0.5px;
-        border-radius: 1.2rem;
-        width: 100%;
-        height: 100%;
-        // margin-left: 2px;
-        padding: 0px 0px 0px 8px;
-        font-size: 1rem;
-        text-align: left;
-        font-family: inherit;
-        cursor: text;
-    }
-
-    .send-btn {
-        height: 100%;
-        width: 3.5rem;
-        border-radius: 50%;
-        border: 0px;
-        color: #fff;
-        margin: 0px 2px 0px 2px;
-        background-color: rgb(104, 161, 236);
-        text-decoration: none;
-        transition: all 0.4s;
-        cursor: pointer;
-    }
-
-    .send-btn:hover{
-        background-color: rgb(32, 117, 229);
-    }
-}
-
-.emoji-picker {
-    position: absolute;
-    bottom: 9vh;
-    right: 3vh;
-    width: 200px; /* Adjust width as needed */
-    max-height: 150px; /* Set maximum height for the picker */
-    overflow-y: auto; /* Enable vertical scrolling within the picker */
-    background-color: #fff; /* Set background color */
-    border: 1px solid #ccc; /* Add border for clarity */
-    padding: 8px; /* Adjust padding as desired */
-    z-index: 1; /* Ensure the picker is above other elements */
-  }
-
-  .emoji-btn,
-  .emoji-picker button {
-    cursor: pointer;
-    border: none;
-    background: none;
-    font-size: 18px;
-    margin: 4px;
-    padding: 4px;
-  }
-  
 
 .dark-mode {
     body {
@@ -198,22 +47,24 @@
     h1,
     h2,
     h4,
-    .hamburger-icon{
+    .hamburger-icon,
+    .user-info-container,
+    .landing-page-title {
         color: #ffffff;
     }
+
 
     a {
         color: black;
     }
 
-    li.channel-preview{
+    li.channel-preview {
         border-top: 0.2rem white solid;
     }
 
     .main-layout,
     .home-section,
-    .app-header
-    {
+    .app-header {
         box-shadow: inset 0 0 0 1px rgb(237, 237, 237);
     }
 
@@ -221,167 +72,27 @@
         border: 1px solid rgb(237, 237, 237);
     }
 
-    form{
-        box-shadow: 2px 2px 4px  rgba(237, 237, 237, 0.5);
-    }
-}
-
-.hamburger-icon {
-    border: none;
-    background: none;
-    font-size: 24px;
-    cursor: pointer;
-    
-}
-
-.menu {
-    width: 7rem;
-    /* Adjust for smaller screens */
-    top: 3rem;
-    /* Adjust the top position */
-    right: 0.2rem;
-    // display: none;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-
-    position: absolute;
-    background-color: white;
-
-    padding: 12px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, height 0.3s ease;
-}
-
-.menu.show {
-    display: flex;
-    align-items: center;
-    
-    opacity: 1;
-    pointer-events: auto;
-}
-
-button.close-menu{
-    
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #080924;
-    background-color: rgba(255, 255, 255, 0);
-    font-family: inherit;
-    text-decoration: inherit;
-    // padding: 0.5rem 1rem;
-    text-decoration: none;
-    border: none;
-    line-height: 1.5;
-    align-self: flex-end;
-}
-
-button.close-menu:hover{
-    color: #535bf2;
-    cursor: pointer;
-}
-
-@media (max-width: 765px) {
-
-    .app-header{
-        h1 {
-            font-size: 2.5em;
-            line-height: 1.5;
-        }
-
-    }
-    .menu {
-        width: 7rem;
-        /* Adjust for smaller screens */
-        top: 0.5rem;
-        /* Adjust the top position */
-        right: 0.2rem;
+    form {
+        box-shadow: 2px 2px 4px rgba(237, 237, 237, 0.5);
     }
 
-    .main-layout {
-        display: block;
-
-        .chat-container {
-            h2 {
-                text-align: center;
-                // margin: 0 auto;
-            }
-
-
-            form {
-                
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 4px 2px 2px 2px;
-                height: 3rem;
-
-
-                // width: 90vw;
-                // left: 30px;
-                // padding-left: 8px; 
-            }
-
-            input {
-                border: 1px solid black;
-                border-radius: 20px;
-                width: 100%;
-                height: 100%;
-                
-
-                // border: 0px;
-                // margin-left: 3rem;
-                // margin-right: 1em;
-
-                // font-size: 16px;
-                // float: left;
-
-                // outline: none;
-                // background-color: #eceff1;
-            }
-
-            .send-btn {
-
-                height: 100%;
-                border-radius: 50%;
-                border: 0px;
-                color: #fff;
-                margin: 0px 2px 0px 2px;
-
-                background-color: rgb(104, 161, 236);
-                text-decoration: none;
-                transition: all 0.8s;
-
-            }
-        }
+    .guest-login-btn,
+    button.logout-btn {
+        color: #fff;
+        border-color: #fff;
     }
 
-    .emoji-picker {
-        position: absolute;
-        bottom: 20vh;
-        right: 3vh;
+    button.logout-btn:hover {
+        color: black;
+        background-color: #fff;
     }
 
-    .msgs-container {
-        overflow-y: auto;
-        /* Enable vertical scrollbar */
-        max-height: 65vh;
 
-        // padding: 0;
-        margin: 0;
-        list-style-type: none;
-
+    .login-page {
+        background-color: transparent;
     }
 
-    @media (max-height: 670px){
-        .msgs-container{
-            max-height: 60vh;
-        }
+    form.login-form {
+        background-color: rgb(244, 243, 243);
     }
 }

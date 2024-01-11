@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { logout } from '../store/actions/user.actions.js'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
+import { utilService } from '../services/util.service.js'
+
+import { MdDarkMode } from 'react-icons/md'
+import { MdLightMode } from 'react-icons/md'
 
 export function AppHeader({ onReturnToLanding, onHandleReturnToLanding }) {
     const user = useSelector(storeState => storeState.userModule.loggedinUser)
@@ -45,19 +49,23 @@ export function AppHeader({ onReturnToLanding, onHandleReturnToLanding }) {
         <header className="app-header">
             <h1>Secret Channel</h1>
             <section className="user-info-container">
+
+                {utilService.getGreeting()}
+
                 {!user && <span className="user-info">
                     {/* <NavLink title='Login' to="/auth/login"><i className="fa-solid fa-user fa-lg"></i></NavLink> */}
                     <p>
                         Guest
                     </p>
-                    <button className='logout-btn' title='logout' onClick={onLogout}>Logout</button>
                 </span>}
+
                 {user && <span className="user-info">
                     <p>
                         {user.fullname}
                     </p>
-                    <button className='logout-btn' title='logout' onClick={onLogout}>Logout</button>
                 </span>}
+
+                <button className='logout-btn' title='logout' onClick={onLogout}>Logout</button>
             </section>
 
             <nav >
@@ -70,7 +78,7 @@ export function AppHeader({ onReturnToLanding, onHandleReturnToLanding }) {
                         &times; {/* X button */}
                     </button>
                     <button className="custom-navlink" onClick={toggleDarkMode}>
-                        {isDarkMode ? '☀️' : '🌙'}
+                        {isDarkMode ? <MdLightMode/> : <MdDarkMode/>}
                     </button>
                     <NavLink className="custom-navlink" title='Home' to="/">Home</NavLink>
                     <NavLink className="custom-navlink" title='Help' to="/help">Help</NavLink>
