@@ -11,8 +11,9 @@ import { MdArrowCircleDown } from 'react-icons/md'
 import { MdArrowCircleUp } from 'react-icons/md'
 import { IoMicOffCircle } from "react-icons/io5";
 import { IoMicCircleSharp } from "react-icons/io5";
-
-
+import { TbMessageCircleSearch } from "react-icons/tb";
+import { GrSend } from "react-icons/gr";
+import { FaRegSmileWink } from "react-icons/fa";
 
 export function ChatBox({ channelId, history }) {
 
@@ -40,8 +41,8 @@ export function ChatBox({ channelId, history }) {
     const [transcript, setTranscript] = useState('');
     const [listening, setListening] = useState(false);
     const [recognition, setRecognition] = useState(null);
-    
-    
+
+
     useEffect(() => {
         const recognitionInstance = new window.webkitSpeechRecognition();
 
@@ -246,9 +247,9 @@ export function ChatBox({ channelId, history }) {
 
         if (!msg) return //defense for sending blank txt messages
         if (recognition) {
-                recognition.stop();
-                setListening(false);
-                console.log("Listening stopped");
+            recognition.stop();
+            setListening(false);
+            console.log("Listening stopped");
         }
 
 
@@ -347,6 +348,9 @@ export function ChatBox({ channelId, history }) {
 
                 {/* <button className="search-btn" onClick={handleSearch}>Search</button> */}
 
+                <button className="start-search-btn" onClick={handleSearch}>
+                    <TbMessageCircleSearch />
+                </button>
                 <button type="button" className='arrow-btn' onClick={handlePrevious}>
                     <MdArrowCircleUp />
                 </button>
@@ -409,11 +413,11 @@ export function ChatBox({ channelId, history }) {
 
             <form onSubmit={sendMessage}>
                 <input type="text" placeholder="Enter your message here..." value={msg} onChange={handleChange} />
-                <button type="button" className='emoji-btn' onClick={toggleEmojiPicker}>😀</button>
+                <button type="button" className='emoji-btn' onClick={toggleEmojiPicker}><FaRegSmileWink /></button>
                 <button className="listening-btn" type="button" onClick={toggleListening}>
-                    {listening ? <IoMicOffCircle />  : <IoMicCircleSharp /> }
+                    {listening ? <IoMicOffCircle /> : <IoMicCircleSharp />}
                 </button>
-                <button className='send-btn'>{'>>'}</button>
+                <button className='send-btn'><GrSend /></button>
                 {typingUser && <p className="typing-msg"> {typingUser} is typing...</p>}
             </form>
 

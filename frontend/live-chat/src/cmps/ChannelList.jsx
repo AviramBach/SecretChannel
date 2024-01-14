@@ -65,6 +65,8 @@ export function ChannelList({ channels }) {
         }
     };
 
+
+    if (!channels) return <div>Server maintenance</div>
     return (
         <div className='channel-list-container'>
             <Slider className="channel-preview-container" ref={sliderRef} {...settings}>

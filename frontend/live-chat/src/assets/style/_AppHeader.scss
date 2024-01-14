@@ -133,8 +133,9 @@ button.close-menu:hover {
 @media (max-width: 765px) {
 
     .app-header {
+        
         h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             line-height: 1.5;
         }
 
@@ -157,65 +158,26 @@ button.close-menu:hover {
         right: 0.2rem;
     }
 
-    .main-layout {
-        display: block;
+        
+    
+}
 
-        .chat-container {
-            h2 {
-                text-align: center;
-                // margin: 0 auto;
-            }
+@media (max-width: 765px){
+    .app-header {
+        
+        h1 {
+            font-size: 1.5em;
+            line-height: 1.5;
+        }
 
+        .user-info-container {
+            font-size: 0.75em;
+        }
 
-            form {
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 4px 2px 2px 2px;
-                height: 3rem;
-
-
-                // width: 90vw;
-                // left: 30px;
-                // padding-left: 8px; 
-            }
-
-            input {
-                border: 1px solid black;
-                border-radius: 20px;
-                width: 100%;
-                height: 100%;
-
-
-                // border: 0px;
-                // margin-left: 3rem;
-                // margin-right: 1em;
-
-                // font-size: 16px;
-                // float: left;
-
-                // outline: none;
-                // background-color: #eceff1;
-            }
-
-            .send-btn {
-
-                height: 100%;
-                border-radius: 50%;
-                border: 0px;
-                color: #fff;
-                margin: 0px 2px 0px 2px;
-
-                background-color: rgb(104, 161, 236);
-                text-decoration: none;
-                transition: all 0.8s;
-
-            }
-
-            .send-btn:hover {
-                background-color: rgb(32, 117, 229);
-            }
+        .logout-btn {
+            border: 1px solid #222b35;
+            padding: 0.25em 0.5em;
+            font-size: 0.75em;
         }
     }
 }

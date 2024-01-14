@@ -20,6 +20,7 @@ export function HomePage() {
     }, [])
     // }, [filterBy])
 
+
     return (
         <section className='home-section'>
             <h2>Channels</h2>
