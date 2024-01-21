@@ -42,28 +42,28 @@ export function ChannelList({ channels }) {
     const settings = {
         dots: true,
         arrows: false,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 2, // Number of slides to show at a time
         slidesToScroll: 2,
         vertical: false, // Set vertical sliding
         verticalSwiping: false,
         afterChange: (currentSlide) => {
-            setSliderIndex(currentSlide);
+            setSliderIndex(currentSlide)
         },
     };
 
     const nextChannel = () => {
         if (sliderRef.current) {
-            sliderRef.current.slickNext();
+            sliderRef.current.slickNext()
         }
-    };
+    }
 
     const prevChannel = () => {
         if (sliderRef.current) {
-            sliderRef.current.slickPrev();
+            sliderRef.current.slickPrev()
         }
-    };
+    }
 
 
     if (!channels) return <div>Server maintenance</div>

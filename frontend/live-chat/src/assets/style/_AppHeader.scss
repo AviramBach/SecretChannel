@@ -40,9 +40,9 @@
 .menu {
     width: 7rem;
     /* Adjust for smaller screens */
-    top: 3rem;
+    top: 0rem;
     /* Adjust the top position */
-    right: 0.2rem;
+    right: 0rem;
     // display: none;
 
     display: flex;
@@ -65,10 +65,10 @@
 .menu.show {
     display: flex;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
     opacity: 1;
     pointer-events: auto;
-
+    
     .custom-navlink{
         font-weight: bold;
     }
@@ -153,9 +153,9 @@ button.close-menu:hover {
     .menu {
         width: 7rem;
         /* Adjust for smaller screens */
-        top: 0.5rem;
+        // top: 0.5rem;
         /* Adjust the top position */
-        right: 0.2rem;
+        right: 0rem;
     }
 
         

@@ -4,8 +4,8 @@
     grid-template-rows: 10vh 1fr;
 
 
-    box-shadow: inset 0 0 0 2px black;
-    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    // box-shadow: inset 0 0 0 2px black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 100vh;
 }
 
@@ -95,4 +95,11 @@
     form.login-form {
         background-color: rgb(244, 243, 243);
     }
+}
+
+.video-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }

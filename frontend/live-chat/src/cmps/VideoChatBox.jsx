@@ -115,7 +115,7 @@ export function VideoChatBox() {
 
 
     return (
-        <div>
+        <div className='video-container'>
             <video ref={localVideoRef} autoPlay playsInline muted style={{ width: 200, height: 150 }}></video>
             <video ref={remoteVideoRef} autoPlay playsInline style={{ width: 200, height: 150 }}></video>
             <button onClick={startCall}>Start Call</button>

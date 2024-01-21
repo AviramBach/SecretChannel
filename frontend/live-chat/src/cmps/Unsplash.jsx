@@ -25,7 +25,7 @@ export function Unsplash({ channelTheme }) {
             });
     }, []);
 
-    if (photos.length === 0) return <div>Waiting on photos</div>;
+    if (photos.length === 0) return <div></div>;
 
     return (
         <div>

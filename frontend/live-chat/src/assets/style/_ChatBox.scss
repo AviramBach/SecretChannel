@@ -15,6 +15,8 @@
 
 .msgs-container {
     overflow-y: auto;
+    overflow-x: hidden;
+
     height: 70vh;
     padding: 0;
     list-style-type: none;
@@ -22,6 +24,7 @@
     border-radius: 20px;
     background-color: rgba(211, 211, 211, 0.272);
 
+    
     p {
         display: inline-block;
         max-width: 90%;
@@ -41,24 +44,53 @@
         .msg-from {
             font-weight: bold;
         }
+
+
+        
     }
 
-    // .msg-container {
-    //     /* Styles for messages from others */
-    //     /* For example: align on the left side */
-    //     text-align: left;
-    // }
-
-    // .msg-container-me {
-    //     /* Styles for messages from you */
-    //     /* For example: align on the right side */
-    //     text-align: right;
-    //     /* Add more styles for differentiation */
-    // }
 }
+
+
+li{
+    // display: block;
+    overflow: auto;
+}
+
+li.card-msg-container>.user-msg{
+    display: block;
+    float: inline-end;
+    top: 5%;
+    background-color: rgb(123, 180, 255);
+
+}
+
+li>p.user-msg{
+    // display: flex;
+    // align-self: center;
+    // justify-content: end;
+    // align-items: center;
+    
+}
+
+.user-msg{
+    
+    
+   
+    
+    
+}
+
+
 
 .channel-chat-container {
     padding: 0px 8px 0px 8px;
+    height: 75%;
+}
+
+.typing-msg {
+    font-weight: 600;
+    padding: 0px 8px;
 }
 
 .chat-container {
@@ -153,24 +185,23 @@
     }
 
     .emoji-picker button {
-
-
         cursor: pointer;
         border: none;
         background: none;
         font-size: 1.4rem;
         margin: 4px;
         padding: 4px;
+    }
 
+    .emoji-picker>button:hover{
+        background-color: rgb(104, 161, 236);
     }
 
     .emoji-picker {
-        position: absolute;
-        bottom: 10rem;
-        right: 10rem;
-
-
-
+        position: fixed;
+        top: 80%; /* Adjust as needed */
+        left: 85%; /* Adjust as needed */
+        transform: translate(-50%, -50%);
 
         width: 200px;
         max-height: 150px;
@@ -201,6 +232,7 @@
     margin-top: 0.1rem;
     border: none;
     font-size: 1.5rem;
+    z-index: 1;
 }
 
 .search-btn:hover {
@@ -225,6 +257,7 @@
         text-align: left;
         font-family: inherit;
         cursor: text;
+        width: 50%;
     }
 
     .arrow-btn,
@@ -252,11 +285,6 @@
 @media (max-width: 765px) {
 
 
-    .emoji-picker {
-        position: relative;
-        bottom: 14rem;
-        left: 10rem;
-    }
 
     .msgs-container {
         overflow-y: auto;
@@ -285,12 +313,12 @@
         }
 
         .emoji-picker {
-            position: absolute;
-            bottom: 9rem;
-            right: 9rem;
+            
+            top:75%;
+            left:65%;
 
-            width: 200px;
-            max-height: 150px;
+            // width: 200px;
+            // max-height: 150px;
         }
     }
 

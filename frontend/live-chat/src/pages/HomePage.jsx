@@ -18,7 +18,7 @@ export function HomePage() {
             showErrorMsg('Cannot load channels')
         }
     }, [])
-    // }, [filterBy])
+    
 
 
     return (
