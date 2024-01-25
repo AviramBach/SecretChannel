@@ -30,7 +30,6 @@ export function ChatBox({ channelId, history }) {
     const [showEmojiPicker, setShowEmojiPicker] = useState(false)
     const [randomFourDigitNumber, setRandomFourDigitNumber] = useState(0)
 
-
     const [searchTerm, setSearchTerm] = useState('')
     const [highlightedMessages, setHighlightedMessages] = useState([])
     const [showSearchInput, setShowSearchInput] = useState(false)
@@ -125,7 +124,7 @@ export function ChatBox({ channelId, history }) {
     }
 
 
-    function handleKeyDown(e){
+    function handleKeyDown(e) {
         if (highlightedMessages.length > 0) {
             if (e.key === 'ArrowUp') {
                 e.preventDefault()
@@ -173,7 +172,7 @@ export function ChatBox({ channelId, history }) {
         scrollToHighlightedMessage()
     }
 
-   
+
     useEffect(() => {
         if (msgsContainerRef.current) {
             msgsContainerRef.current.scrollTop = msgsContainerRef.current.scrollHeight
@@ -336,16 +335,17 @@ export function ChatBox({ channelId, history }) {
                 />
 
                 {/* <button className="search-btn" onClick={handleSearch}>Search</button> */}
-
-                <button className="start-search-btn" onClick={handleSearch}>
-                    <TbMessageCircleSearch />
-                </button>
-                <button type="button" className='arrow-btn' onClick={handlePrevious}>
-                    <MdArrowCircleUp />
-                </button>
-                <button type="button" className='arrow-btn' onClick={handleNext}>
-                    <MdArrowCircleDown />
-                </button>
+                <div className='search-btns'>
+                    <button className="start-search-btn" onClick={handleSearch}>
+                        <TbMessageCircleSearch />
+                    </button>
+                    <button type="button" className='arrow-btn' onClick={handlePrevious}>
+                        <MdArrowCircleUp />
+                    </button>
+                    <button type="button" className='arrow-btn' onClick={handleNext}>
+                        <MdArrowCircleDown />
+                    </button>
+                </div>
 
             </div>}
 
@@ -396,14 +396,14 @@ export function ChatBox({ channelId, history }) {
                 ))}
             </ul>
 
-                {showEmojiPicker && (
-                    <div className="emoji-picker">
-                        {emojiList.map((emoji, index) => (
-                            <button key={index} onClick={() => handleEmojiClick(emoji)}>{emoji}</button>
-                        ))}
-                    </div>
-                )}
-                
+            {showEmojiPicker && (
+                <div className="emoji-picker">
+                    {emojiList.map((emoji, index) => (
+                        <button key={index} onClick={() => handleEmojiClick(emoji)}>{emoji}</button>
+                    ))}
+                </div>
+            )}
+
             <form onSubmit={sendMessage}>
                 <input type="text" placeholder="Enter your message here..." value={msg} onChange={handleChange} />
                 <button type="button" className='emoji-btn' onClick={toggleEmojiPicker}>

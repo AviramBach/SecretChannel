@@ -100,11 +100,13 @@ export function ChannelChat() {
       <h2>{channel.name}</h2>
         {/* <ChatBox channelId={channel._id} history={channel.chatHistory} /> */}
       
-      {channel.name !== "Video Chat" ? (
+        <ChatBox channelId={channel._id} history={channel.chatHistory} />
+
+      {/* {channel.name !== "Video Chat" ? (
         <ChatBox channelId={channel._id} history={channel.chatHistory} />
       ) : (
         <VideoChatBox />
-      )}
+      )} */}
     </div>
   )
 

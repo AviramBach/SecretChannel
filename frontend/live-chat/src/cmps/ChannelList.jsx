@@ -36,8 +36,10 @@ import { MdOutlineNavigateBefore } from "react-icons/md";
 
 export function ChannelList({ channels }) {
 
-    const [sliderIndex, setSliderIndex] = useState(0);
-    const sliderRef = useRef(null);
+    const [sliderIndex, setSliderIndex] = useState(0)
+    const sliderRef = useRef(null)
+
+    const [loading, setLoading] = useState(true)
 
     const settings = {
         dots: true,
@@ -65,8 +67,21 @@ export function ChannelList({ channels }) {
         }
     }
 
+    if (!channels) {
+        // If channels are not available, display a loading bar
+        return <div className="loading-bar">Loading...</div>;
+    }
 
+    if (loading) {
+        // If channels are available, but still loading, set loading state to false
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000); // Simulating a 2-second loading delay, you can adjust this value
+        return <div className="loading-bar">Loading...</div>;
+    }
+    
     if (!channels) return <div>Server maintenance</div>
+    
     return (
         <div className='channel-list-container'>
             <Slider className="channel-preview-container" ref={sliderRef} {...settings}>

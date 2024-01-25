@@ -86,6 +86,8 @@ li>p.user-msg{
 .channel-chat-container {
     padding: 0px 8px 0px 8px;
     height: 75%;
+
+    max-width: 100%;
 }
 
 .typing-msg {
@@ -109,11 +111,12 @@ li>p.user-msg{
         margin-top: 8px;
         padding: 4px 4px 4px 4px;
         height: 3rem;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.149);
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.120);
         border-radius: 30px;
-        // width: 90vw;
-        // left: 30px;
-        // padding-left: 8px; 
+        
+
+
+
 
         .listening-btn {
             display: flex;
@@ -150,6 +153,8 @@ li>p.user-msg{
 
             // box-shadow: inset 0 0 0 0.5px;
             border-radius: 1.2rem;
+            border: none;
+            outline: none;
             width: 100%;
             height: 100%;
             // margin-left: 2px;
@@ -159,6 +164,8 @@ li>p.user-msg{
             font-family: inherit;
             cursor: text;
         }
+
+       
 
         .send-btn {
             height: 100%;
@@ -243,15 +250,27 @@ li>p.user-msg{
 
 .search-container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 75%;
     position: absolute;
-    /* or position: fixed; */
-
+    
+    border-radius: 1.2rem;
+    
+    background-color: #fff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.100);
+    padding: 0.1rem;
     z-index: 1;
     // margin-bottom: 0.5rem;
+    
+
+
 
     input {
-        border-radius: 1.2rem;
+        // border-radius: 1.2rem;
+        border: none;
+        outline: none;
+        
         padding: 2px 2px 2px 8px;
         font-size: 1rem;
         text-align: left;
