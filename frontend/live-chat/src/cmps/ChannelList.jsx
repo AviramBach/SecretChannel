@@ -25,7 +25,7 @@ import { Route, HashRouter as Router, Routes } from 'react-router-dom'
 //     )
 // }
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -40,14 +40,34 @@ export function ChannelList({ channels }) {
     const sliderRef = useRef(null)
 
     const [loading, setLoading] = useState(true)
+    const [slidesToShow, setSlidesToShow] = useState(2)
+
+    useEffect(() => {
+        const updateSlidesToShow = () => {
+            // Update slidesToShow based on the viewport width
+            setSlidesToShow(window.innerWidth < 765 ? 2 : 3);
+        }
+
+        // Add event listener for window resize
+        window.addEventListener('resize', updateSlidesToShow);
+
+        // Call the function once to set initial value
+        updateSlidesToShow();
+
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', updateSlidesToShow);
+        };
+    }, [])
+
 
     const settings = {
         dots: true,
         arrows: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 2, // Number of slides to show at a time
-        slidesToScroll: 2,
+        slidesToShow: slidesToShow, // Number of slides to show at a time
+        slidesToScroll: slidesToShow,
         vertical: false, // Set vertical sliding
         verticalSwiping: false,
         afterChange: (currentSlide) => {
@@ -79,15 +99,17 @@ export function ChannelList({ channels }) {
         }, 2000); // Simulating a 2-second loading delay, you can adjust this value
         return <div className="loading-bar">Loading...</div>;
     }
-    
+
     if (!channels) return <div>Server maintenance</div>
-    
+
     return (
         <div className='channel-list-container'>
             <Slider className="channel-preview-container" ref={sliderRef} {...settings}>
                 {channels.map((channel) => (
-                    <div key={channel._id} className="channel-preview">
-                        <ChannelPreview channel={channel} />
+                    <div className='channel-card'>
+                        <div key={channel._id} className="channel-preview">
+                            <ChannelPreview channel={channel} />
+                        </div>
                     </div>
                 ))}
             </Slider>

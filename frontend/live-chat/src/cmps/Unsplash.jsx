@@ -17,11 +17,11 @@ export function Unsplash({ channelTheme }) {
                 if (response.response.results.length > 0) {
                     setPhotos(response.response.results);
                 } else {
-                    console.warn('No photos found in the response.');
+                    console.log('No photos found in the response.');
                 }
             })
             .catch(error => {
-                console.error('Error fetching photos:', error);
+                console.log('Error fetching photos:', error);
             });
     }, []);
 

@@ -48,43 +48,47 @@ export function AppHeader({ onReturnToLanding, onHandleReturnToLanding }) {
     return (
         <header className="app-header">
             <h1>Secret Channel</h1>
-            <section className="user-info-container">
+            <div className='user-side'>
+                <section className="user-info-container">
 
-                {utilService.getGreeting()}
+                    <div className='user-info-greeting'>
+                        {utilService.getGreeting()}
 
-                {!user && <span className="user-info">
-                    {/* <NavLink title='Login' to="/auth/login"><i className="fa-solid fa-user fa-lg"></i></NavLink> */}
-                    <p>
-                        Guest
-                    </p>
-                </span>}
+                        {!user && <span className="user-info">
+                            {/* <NavLink title='Login' to="/auth/login"><i className="fa-solid fa-user fa-lg"></i></NavLink> */}
+                            
+                                Guest
+                            
+                        </span>}
 
-                {user && <span className="user-info">
-                    <p>
-                        {user.fullname}
-                    </p>
-                </span>}
+                        {user && <span className="user-info">
+                            <p>
+                                {user.fullname}
+                            </p>
+                        </span>}
+                    </div>
 
-                <button className='logout-btn' title='logout' onClick={onLogout}>Logout</button>
-            </section>
+                    <button className='logout-btn' title='logout' onClick={onLogout}>Logout</button>
+                </section>
 
-            <nav >
-                <button className="hamburger-icon" onClick={toggleMenu}>
-                    ☰
-                </button>
-
-                <div className={`menu ${showMenu ? 'show' : ''}`}>
-                    <button className="close-menu" onClick={toggleMenu}>
-                        &times; {/* X button */}
+                <nav className='menu-icon-container'>
+                    <button className="hamburger-icon" onClick={toggleMenu}>
+                        ☰
                     </button>
-                    <button className="custom-navlink" onClick={toggleDarkMode}>
-                        {isDarkMode ? <MdLightMode/> : <MdDarkMode/>}
-                    </button>
-                    <NavLink className="custom-navlink" title='Home' to="/">Home</NavLink>
-                    <NavLink className="custom-navlink" title='Help' to="/help">Help</NavLink>
-                    <button className="custom-navlink" onClick={onReturnToLanding}>Login/Signup</button>
-                </div>
-            </nav>
+
+                    <div className={`menu ${showMenu ? 'show' : ''}`}>
+                        <button className="close-menu" onClick={toggleMenu}>
+                            &times; {/* X button */}
+                        </button>
+                        <button className="custom-navlink" onClick={toggleDarkMode}>
+                            {isDarkMode ? <MdLightMode /> : <MdDarkMode />}
+                        </button>
+                        <NavLink className="custom-navlink" title='Home' to="/">Home</NavLink>
+                        <NavLink className="custom-navlink" title='Help' to="/help">Help</NavLink>
+                        <button className="custom-navlink" onClick={onReturnToLanding}>Login/Signup</button>
+                    </div>
+                </nav>
+            </div>
         </header>
     )
 }

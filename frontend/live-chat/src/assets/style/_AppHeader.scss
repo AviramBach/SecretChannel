@@ -28,6 +28,9 @@
     }
 }
 
+.menu-icon-container{
+    display: flex;
+}
 
 .hamburger-icon {
     border: none;
@@ -94,24 +97,43 @@ button.close-menu:hover {
     cursor: pointer;
 }
 
+.user-side{
+    display: flex;
+    gap: 0.5rem;
+}
+
 .user-info-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    font-weight: 600;
+    align-items: flex-start;
+    font-weight: 500;
     text-align: center;
+     font-size: 0.85em;
+
+    .user-info-greeting{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+
+        
+    }
 
     .user-info {
-        // display: flex;
-        // flex-direction: row;
+        font-weight: bolder;
     }
 
     .logout-btn {
-        margin-top: 0.1rem;
-        color: black;
+        
+        color: #0075FF;
         background-color: transparent;
-        border: 2px solid #222b35;
-        padding: 0.25rem 0.5rem;
+        border: none;
+
+        // color: black;
+        // border: 1px solid #222b35;
+        // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.150);
+
+        padding: 0.25rem 0.25rem 0.5rem 0rem;
         font-size: 1em;
         font-weight: bold;
         cursor: pointer;
@@ -124,9 +146,11 @@ button.close-menu:hover {
     }
 
     .logout-btn:hover {
-        color: white;
-        background-color: #222b35;
-
+        color: #222b35;
+        
+        
+        // color: white;
+        // background-color: #222b35;
     }
 }
 
@@ -144,10 +168,22 @@ button.close-menu:hover {
         }
 
         .logout-btn {
-            border: 1px solid #222b35;
-            padding: 0.25em 0.5em;
+            // border: 1px solid #222b35;
+            // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.150);
+            padding: 0.25em 0.25rem 0.5em 0.5rem;
             font-size: 0.85em;
         }
+    }
+
+    .user-info-container {
+        align-items: center;
+       
+        // .user-info-greeting{
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: space-between;
+        //     gap: 5px;
+        // }
     }
 
     .menu {
@@ -158,26 +194,21 @@ button.close-menu:hover {
         right: 0rem;
     }
 
-        
+    .user-side{  
+        // gap: 0rem;
+    }
+      
     
 }
 
-@media (max-width: 765px){
+@media (max-width: 430px) {
+
     .app-header {
         
         h1 {
-            font-size: 1.5em;
+            font-size: 6vw;
             line-height: 1.5;
-        }
-
-        .user-info-container {
-            font-size: 0.75em;
-        }
-
-        .logout-btn {
-            border: 1px solid #222b35;
-            padding: 0.25em 0.5em;
-            font-size: 0.75em;
         }
     }
 }
+
