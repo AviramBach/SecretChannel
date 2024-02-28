@@ -62,7 +62,7 @@ li.card-msg-container>.user-msg{
     float: inline-end;
     top: 5%;
     background-color: rgb(123, 180, 255);
-
+    color: black;
 }
 
 li>p.user-msg{
@@ -308,7 +308,7 @@ li>p.user-msg{
     .msgs-container {
         overflow-y: auto;
         /* Enable vertical scrollbar */
-        max-height: 65vh;
+        max-height: 60vh;
 
         // padding: 0;
         margin: 0;
@@ -333,7 +333,7 @@ li>p.user-msg{
 
         .emoji-picker {
             
-            top:75%;
+            top:70%;
             left:65%;
 
             // width: 200px;

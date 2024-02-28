@@ -84,7 +84,7 @@ export function AppHeader({ onReturnToLanding, onHandleReturnToLanding }) {
                             {isDarkMode ? <MdLightMode /> : <MdDarkMode />}
                         </button>
                         <NavLink className="custom-navlink" title='Home' to="/">Home</NavLink>
-                        <NavLink className="custom-navlink" title='Help' to="/help">Help</NavLink>
+                        {/* <NavLink className="custom-navlink" title='Help' to="/help">Help</NavLink> */}
                         <button className="custom-navlink" onClick={onReturnToLanding}>Login/Signup</button>
                     </div>
                 </nav>

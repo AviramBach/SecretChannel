@@ -108,8 +108,9 @@ button.close-menu:hover {
     align-items: flex-start;
     font-weight: 500;
     text-align: center;
-     font-size: 0.85em;
-
+    font-size: 0.85em;
+    justify-content: center;
+    
     .user-info-greeting{
         display: flex;
         align-items: center;
@@ -201,7 +202,7 @@ button.close-menu:hover {
     
 }
 
-@media (max-width: 430px) {
+@media (max-width: 460px) {
 
     .app-header {
         
@@ -209,6 +210,28 @@ button.close-menu:hover {
             font-size: 6vw;
             line-height: 1.5;
         }
+
+        .user-info-container{
+            font-size: 3vw;
+        }
     }
 }
 
+@media (max-width: 340px) {
+
+    .app-header {
+        
+        h1 {
+            font-size: 5.5vw;
+            line-height: 1.5;
+        }
+
+        .user-info-container{
+            font-size: 2.5vw;
+        }
+
+        button.hamburger-icon{
+            font-size: 1.2rem;
+        }
+    }
+}

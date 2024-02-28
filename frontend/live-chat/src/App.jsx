@@ -57,10 +57,7 @@ export default function App() {
                                 <Route element={<HomePage />} path="/" />
                                 <Route element={<HelpPage />} path="/help" />
                                 <Route element={<ChannelChat />} path="/channel/:channelId" />
-                                {/* <Route element={<DashboardPage />} path="/dashboard" />
-                            <Route element={<ToyIndex />} path="/toy" />
-                            <Route element={<ReviewExplore />} path="/review" />
-                            <Route element={<LoginSignup />} path="/auth/login" /> */}
+                                
                             </Routes>
                             {/* <AppFooter /> */}
                         </>

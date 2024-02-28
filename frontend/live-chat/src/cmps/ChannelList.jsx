@@ -87,28 +87,29 @@ export function ChannelList({ channels }) {
         }
     }
 
-    if (!channels) {
-        // If channels are not available, display a loading bar
-        return <div className="loading-bar">Loading...</div>;
-    }
+    // if (!channels) {
+    //     // If channels are not available, display a loading bar
+    //     return <div className="loading-bar">Loading...</div>;
+    // }
 
     if (loading) {
         // If channels are available, but still loading, set loading state to false
         setTimeout(() => {
             setLoading(false);
-        }, 2000); // Simulating a 2-second loading delay, you can adjust this value
+        }, 3500); // Simulating a 2-second loading delay, you can adjust this value
         return <div className="loading-bar">Loading...</div>;
     }
 
     if (!channels) return <div>Server maintenance</div>
-
+    
     return (
         <div className='channel-list-container'>
             <Slider className="channel-preview-container" ref={sliderRef} {...settings}>
                 {channels.map((channel) => (
-                    <div className='channel-card'>
-                        <div key={channel._id} className="channel-preview">
+                    <div key={channel._id} className='channel-card'>
+                        <div className="channel-preview">
                             <ChannelPreview channel={channel} />
+                    
                         </div>
                     </div>
                 ))}

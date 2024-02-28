@@ -1,5 +1,5 @@
 // import logoUrl from '../assets/img/logo.png'
-import { ChannelList } from '../cmps/ChannelList.jsx'
+import { ChannelList } from '../cmps/ChannelList'
 import { loadChannels } from '../store/actions/channel.action.js'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'

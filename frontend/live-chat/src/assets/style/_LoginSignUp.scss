@@ -48,7 +48,8 @@
             border-radius: 3px;
             cursor: pointer;
             transition: background-color 0.2s;
-
+            font-family: "Raleway", sans-serif !important;
+            font-weight: bolder;
             &:hover {
                 background-color: #0056b3;
             }
@@ -69,7 +70,13 @@
     margin-top: 0.5rem;
     color: #222b35;
     background-color: transparent;
-    border: 1px solid #222b35;
+
+    font-family: "Raleway", sans-serif !important;
+    // font-weight: bolder;
+
+    // border: 1px solid #222b35;
+    border: transparent;
+
     padding: 8px 16px;
     font-size: 14px;
     cursor: pointer;
@@ -78,6 +85,8 @@
     display: inline-block;
     outline: none;
     border-radius: 4px;
+    
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .guest-login-btn:hover {
@@ -100,15 +109,17 @@
 
     // font-family: Arial, sans-serif;
     font-family: 'Raleway', sans-serif;
-
-    font-size: 36px;
-    white-space: nowrap;
-    /* Ensures the text doesn't wrap */
-    overflow: hidden;
-    /* Hide overflowing characters */
-    // border-right: 2px solid; /* Simulates the typing cursor */
-    animation: typing 5s steps(45) infinite;
+    
+    font-size: 2.5rem;
     text-align: center;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.2rem solid #007bff; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    //   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 5s steps(20, end) infinite,
+        blink-caret .5s step-end infinite;
 
 }
 
@@ -120,13 +131,19 @@
 }
 
 @keyframes typing {
-    0% {
-        width: 0;
-    }
+    from { width: 0 }
+    to { width: 90% }
+}
 
-    100% {
-        width: 100%;
-    }
+@keyframes blink-caret {
+    from { border-color: transparent }
+    50% { border-color: #007bff; }
+  }
+
+.title-dot{
+    color: #007bff;
+    font-weight: 900;
+    // font-size: 2.7rem;
 }
 
 .user-info{
@@ -184,6 +201,22 @@
         margin-top: 0.5rem;
         padding: 6px 12px;
         font-size: 12px;
-        border: 1px solid #222b35;
+        // border: 1px solid #222b35;
+    }
+
+    .landing-page-title {
+
+        font-family: 'Raleway', sans-serif;
+    
+        font-size: 6vw;
+    }
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    .landing-page-welcome{
+        font-size: 1.2rem;
     }
 }

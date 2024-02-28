@@ -7,6 +7,8 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import { UserMsg } from './UserMsg.jsx'
 
+import { Navigate } from 'react-router-dom'
+
 export function LoginSignup({ onToggleLandingPage }) {
 
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
@@ -28,6 +30,7 @@ export function LoginSignup({ onToggleLandingPage }) {
             try {
                 const user = await signup(credentials)
                 showSuccessMsg(`Welcome ${user.fullname}`)
+                // return <Navigate to="/home" />
                 onToggleLandingPage()
 
             }
@@ -39,6 +42,7 @@ export function LoginSignup({ onToggleLandingPage }) {
             try {
                 const user = await login(credentials)
                 showSuccessMsg(`Hi again ${user.fullname}`)
+                // return <Navigate to="/home" />
                 onToggleLandingPage()
             }
             catch (err) {
@@ -56,7 +60,7 @@ export function LoginSignup({ onToggleLandingPage }) {
 
     return (
         <div className="login-page">
-            <h1 className="landing-page-title">Secret Channel</h1>
+            <h1 className="landing-page-title">Secret Channel<span className='title-dot'>.</span></h1>
             <form className="login-form" onSubmit={onSubmit}>
                 <h3 className="landing-page-welcome">Welcome!</h3>
                 <TextField
@@ -105,13 +109,14 @@ export function LoginSignup({ onToggleLandingPage }) {
 
                 <UserMsg />
             </form>
-
             <div className="btns">
                 <a className="toggle-signup-link" href="#" onClick={onToggleSignupState}>
                     {isSignupState ? 'Already a member? Login' : 'New user? Signup here'}
                 </a>
             </div>
-            <button className="guest-login-btn" onClick={onToggleLandingPage}>Enter as a Guest</button>
+
+            {/* <button className="guest-login-btn" onClick={onToggleLandingPage}>Enter as a Guest</button> */}
+            <button className="guest-login-btn" onClick={onToggleLandingPage}>GUEST LOGIN</button>
         </div>
     )
 }
